@@ -3,56 +3,51 @@
 // Se usa para agrupar mensajes en consola.
 console.group("Cuadrados");
 
-const ladoCuadrado = 5;
-console.log(ladoCuadrado)
+function square_perimeter(side) {
+    return side * 4;
+}
 
-const perimetroCuadrado = 4 * ladoCuadrado;
-console.log("El perímetro es: " + perimetroCuadrado + "cm")
+function square_area(side) {
+    return side * side;
+}
 
-const areaCuadrado = ladoCuadrado * ladoCuadrado;
-console.log("El area es: " + areaCuadrado + "cm²")
-
+console.log(square_perimeter(56))
+console.log(square_area(56))
 console.groupEnd();
+
 
 // Código del triángulo
 console.group("Triángulo");
 
-const altura = 6;
-console.log(altura)
+function triangle_area(base,height){
+    return (base * height)/2;
+}
 
-const ladoTriangulo = 6;
-console.log(ladoTriangulo)
+function triangle_perimeter(base,side1,side2){
+    return base + side1 + side2;
+}
 
-const baseTriangulo = 5;
-console.log(baseTriangulo)
-
-const perimetroTriangulo = ladoTriangulo + altura + baseTriangulo;
-console.log("El perímetro es " + perimetroTriangulo)
-
-const areaTriangulo = (baseTriangulo * altura) / 2;
-console.log("El área del triángulo es: " + areaTriangulo)
-
-console.log("La base es: "
-    + baseTriangulo + "cm, "
-    + " Y sus lados son de "
-    + ladoTriangulo + "cm"
-    + " y "
-    + altura + "cm")
-
+console.log(triangle_perimeter(5,5,5))
+console.log(triangle_area(5,5))
 console.groupEnd();
 
 // Código del circulo
 console.group("Círculos");
+const PI = Math.PI
 
-const radio = 4;
-const diametro = radio * 2;
-const PI = Math.PI;
-console.log(diametro)
+function circle_diameter(radio){
+    return radio * 2;
+}
 
-// Circunferencia
-const perimetroCirculo = diametro * PI
-const areaCirculo = (radio * radio) * PI
+function circle_perimeter(radio){
+    const diameter = circle_diameter(radio)
+    return diameter * PI ;
+}
 
-console.log(perimetroCirculo)
-console.log(areaCirculo)
+function circle_area(radio){
+    return PI * (radio ** 2)
+}
+
+console.log(circle_area(5))
+console.log(circle_perimeter(5))
 console.groupEnd();
